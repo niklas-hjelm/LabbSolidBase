@@ -25,6 +25,12 @@ namespace LabbSolidBase
             InitializeComponent();
         }
 
+        private void SortingAlgorithm_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //This method is run if the selected value of the combo box with sorting algorithms changes.
+            //Maybe do something here?
+        }
+
         private void SortBtn_OnClick(object sender, RoutedEventArgs e)
         {
             SortedList.Items.Clear();
@@ -34,7 +40,7 @@ namespace LabbSolidBase
             var arr = InputText.Text.Split(',');
             if (!double.TryParse(arr[0], out var d))
             {
-
+                //Implement sorting on strings if you want to.
             }
             else
             {
@@ -62,10 +68,6 @@ namespace LabbSolidBase
             }
         }
 
-        private void SortingAlgorithm_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //Maybe do something here?
-        }
         static void QuickSort(ref int[] data, int left, int right)
         {
             var pivot = data[(left + right) / 2];
